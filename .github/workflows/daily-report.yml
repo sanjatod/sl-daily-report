@@ -17,4 +17,4 @@ jobs:
         shell: pwsh
         env:
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
-        run: pwsh -ExecutionPolicy Bypass -File daily_report.ps1
+        run: pwsh -ExecutionPolicy Bypass -File daily_report.ps1 -TestMode
