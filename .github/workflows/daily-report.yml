@@ -1,0 +1,20 @@
+name: SL Daily Scrum Report
+
+on:
+  schedule:
+    # 08:30 UTC = 10:30 CEST (leto, UTC+2)  ← aktivno sad
+    # Zima (CET, UTC+1): promeniti na 09:30 UTC krajem oktobra
+    - cron: '30 8 * * 1-5'
+  workflow_dispatch:   # rucno pokretanje za test
+
+jobs:
+  send-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Send SL Daily Report
+        shell: pwsh
+        env:
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+        run: pwsh -ExecutionPolicy Bypass -File daily_report.ps1
