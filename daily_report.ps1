@@ -4,7 +4,7 @@
 # Local: runs as-is with hardcoded token fallback.
 
 param(
-    [string]$JiraApiToken = $env:JIRA_API_TOKEN,
+    [string]$JiraApiToken = $(if ($env:JIRA_API_TOKEN) { $env:JIRA_API_TOKEN } else { "ATATT3xFfGF0wd2WKnfFyFefuUk_N67ILTsTqUIAUeUrps9SvC7ze1XuMw77H8YS40ZZ8IvYQIm48mZXyKHQ7uy2Ics4t-g50OIU0AEWDT4BAlxTu0720CdnIkGARBAUBCCbVh43iTtwh4euXWpeS1wpIRiHsgwLmWfj8BfqRauBv2R4O8NpujI=35CF59EA" }),
     [switch]$TestMode   # -TestMode: salje na Mobile kanal umesto Sales Leader
 )
 
