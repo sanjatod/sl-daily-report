@@ -1,10 +1,6 @@
 name: SL Daily Scrum Report
 
 on:
-  schedule:
-    # 08:30 UTC = 10:30 CEST (leto, UTC+2)  <- aktivno sad
-    # Zima (CET, UTC+1): promeniti na 09:30 UTC krajem oktobra
-    - cron: '30 8 * * 1-5'
   workflow_dispatch:
     inputs:
       test_mode:
